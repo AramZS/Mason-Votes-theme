@@ -55,7 +55,7 @@ body {
 
 #preview {
 
-	height: 228px;
+	height: 227px;
 	margin-bottom: 9px;
 	width: 100%;
 
@@ -63,23 +63,42 @@ body {
 
 #preview-side {
 
-	width: 262px;
+	width: 264px;
 	float: right;
 	height: 228px;
 	background-color: blue;
 	
 }
 
+
+#preview-photos {
+
+	width: 100%;
+	background-color: lightgreen;
+	height: 120px;
+	margin-bottom: 6px;
+
+}
+
+.mini-photos {
+
+	width: 76px;
+	height: 102px;
+	margin: 6px;
+	background-color: yellow;
+	float: left;
+
+}
+
 #mainphoto {
 
-	width: 415px;
+	width: 414px;
 	margin-right: 5px;
 	float: left;
 	height: 228px;
 	background-color: lightblue;
 
 }
-
 
 #sidebar-left-box {
 
