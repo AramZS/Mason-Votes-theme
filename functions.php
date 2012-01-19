@@ -12,11 +12,11 @@ include('library/control/options/options.php');
 function differ_css() {
 	if (is_home()){
 	
-		echo '<link href="home.css" rel="stylesheet" type="text/css">';
+		echo '<link href="' . get_stylesheet_directory_uri() . '/home.css" rel="stylesheet" type="text/css">';
 	
 	}else{
 	
-		echo '<link href="else.css" rel="stylesheet" type="text/css">';
+		echo '<link href="' . get_stylesheet_directory_uri() . '/else.css" rel="stylesheet" type="text/css">';
 	
 	}
 }
