@@ -1,0 +1,5 @@
+/*Apply a basic layout*/
+@import url('../thematic/library/layouts/2c-r-fixed.css');
+
+/*Prepare theme for retheming*/
+@import url('user.css');

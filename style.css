@@ -1,0 +1,31 @@
+/*
+Theme Name: Mason Votes theme
+Theme URI: http://masonvotes.gmu.edu
+Description: Thematic child theme for Mason Votes
+Author: Aram Zucker-Scharff
+Author URI: http://aramzs.me
+Template: thematic
+Version: 0.6
+Tags: thematic, pale
+.
+Created for Mason Votes.
+.
+*/
+
+/*Reset browser defaults */
+@import url('../thematic/library/styles/reset.css');
+
+/*Apply basic typography styles */
+@import url('../thematic/library/styles/typography.css');
+
+/*Apply a basic layout
+@import url('../thematic/library/layouts/2c-r-fixed.css');*/
+
+/*Apply basic image styles*/
+@import url('../thematic/library/styles/images.css');
+
+/*Apply default theme styles and colors */
+@import url('library/styles/default.css');
+
+/*Prepare theme for plugins*/
+@import url('../thematic/library/styles/plugins.css');
