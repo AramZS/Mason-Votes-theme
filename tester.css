@@ -100,6 +100,48 @@ body {
 
 }
 
+#main-content {
+
+	width:683px;
+	float:left;
+	
+	background-color: green;
+	height: 578px;
+
+}
+
+#sidebar-right {
+
+	width: 120px;
+	float: left;
+	margin-left: -120px;
+	background-color: red;
+	height: 578px;
+
+}
+
+#big-story {
+
+	width:541px;
+	margin-right: 22px;
+	background-color: lightblue;
+	float:left;
+	
+	height: 124px;
+
+}
+
+#feed {
+
+	width:541px;
+	margin-right: 22px;
+	background-color: lightyellow;
+	margin-bottom: 10px;
+	float:left;
+	height: 454px;
+
+}
+
 #sidebar-left-box {
 
 	width: 166px;
