@@ -1,6 +1,6 @@
 <?php
 
-function nmwp_opengraph() /*function opens*/{
+function mv_opengraph() /*function opens*/{
 
   // load the custom options
   global $childoptions;
@@ -13,17 +13,17 @@ function nmwp_opengraph() /*function opens*/{
 		?><meta property="og:title" content="<?php bloginfo('name'); ?>"/><?php
 	
 		//If the user has designated a default thumbnail for their site, output into an opengraph tag. 
-		if ( empty($nmwp_fb_thumb) == FALSE ) {
+		if ( empty($fb_thumb) == FALSE ) {
 	
-			?><meta property="og:image" content="<?php echo $nmwp_fb_thumb; ?>"/><?php
+			?><meta property="og:image" content="<?php echo $fb_thumb; ?>"/><?php
 		
 		}
 		?><meta property="og:url" content="<?php bloginfo('url') ?>" /><?php
 		?><meta property="og:type" content="website" /><?php
-		if ( empty($nmwp_fb_og_descrip) == FALSE ) {
+		if ( empty($fb_og_descrip) == FALSE ) {
 			
 			?><meta property="og:description"
-					content="<?php echo $nmwp_fb_og_descrip; ?>" /><?php
+					content="<?php echo $fb_og_descrip; ?>" /><?php
 		} else {
 			
 			$blogtagline = get_bloginfo('description');
@@ -43,24 +43,24 @@ function nmwp_opengraph() /*function opens*/{
 			?><meta property="og:title" content="<?php bloginfo('title'); wp_title(); ?>"/><?php
 			?><meta property="og:type" content="author" /><?php
 			//If it is an archive page, there may not be a thumbnail to pull from, so let's designate the default thumbnail again. 
-			if ( empty($nmwp_fb_thumb) == FALSE ) {
+			if ( empty($fb_thumb) == FALSE ) {
 		
-				?><meta property="og:image" content="<?php echo $nmwp_fb_thumb; ?>"/><?php
+				?><meta property="og:image" content="<?php echo $fb_thumb; ?>"/><?php
 			
 			}				
 		} /*author closes*/ elseif ( is_archive() || is_attachment() || is_category() || is_date() || is_day() || is_feed() || is_month() || is_search() || is_tag() || is_tax() || is_time() || is_year() ) /*non-single, non-home opens*/ {
 			?><meta property="og:title" content="<?php bloginfo('title'); wp_title(); ?>"/><?php
 			?><meta property="og:type" content="blog" /><?php
-			if ( empty($nmwp_fb_thumb) == FALSE ) {
+			if ( empty($fb_thumb) == FALSE ) {
 		
-				?><meta property="og:image" content="<?php echo $nmwp_fb_thumb; ?>"/><?php
+				?><meta property="og:image" content="<?php echo $fb_thumb; ?>"/><?php
 			
 			}
 
-			if ( empty($nmwp_fb_og_descrip) == FALSE ) {
+			if ( empty($fb_og_descrip) == FALSE ) {
 			
 			?><meta property="og:description"
-					content="<?php echo $nmwp_fb_og_descrip; ?>" /><?php
+					content="<?php echo $fb_og_descrip; ?>" /><?php
 			} else {
 				
 				$blogtagline = get_bloginfo('description');
@@ -138,20 +138,20 @@ $url = $thumb['0']; echo $url; ?>"/><?php
 
 	
 	//Has the user entered an admin ID or IDs? If so, output them into an fb tag.
-	if ( empty($nmwp_fb_IDs) == FALSE ) {
+	if ( empty($fb_IDs) == FALSE ) {
 	
-		?><meta property="fb:admins" content="<?php echo $nmwp_fb_IDs; ?>"/><?php
+		?><meta property="fb:admins" content="<?php echo $fb_IDs; ?>"/><?php
 	
 	}
 	
 	//Has the user entered a Facebook App ID? If so, output them into an fb tag.
-	if ( empty($nmwp_fb_app_ID) == FALSE ) {
+	if ( empty($fb_app_ID) == FALSE ) {
 	
-		?><meta property="fb:app_id" content="<?php echo $nmwp_fb_app_ID; ?>"/><?php
+		?><meta property="fb:app_id" content="<?php echo $fb_app_ID; ?>"/><?php
 	
 	}
 } /*function closes*/
 
-add_action('wp_head', 'nmwp_opengraph');
+add_action('wp_head', 'mv_opengraph');
 
 ?>

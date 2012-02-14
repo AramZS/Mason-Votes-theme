@@ -23,11 +23,6 @@ function differ_css() {
 
 add_action('wp_head', 'differ_css');
 
-function nmwp_footer_pagelinks() {
-	echo '<ul id="simplepages">';
-	wp_list_pages('depth=1&sort_column=menu_order&title_li=');
-	echo '</ul>';
-}
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-formats', array( 'aside', 'link', 'quote' ) );
 }
@@ -49,30 +44,18 @@ function make_favicon() {
 }
 
 add_action('wp_head', 'make_favicon');
-
-//include('library/extensions/standout-extensions.php');
-
-//Adding custom font for headlines.
-function make_fonts() {
-	echo "<link href='http://fonts.googleapis.com/css?family=Nobile:400,700' rel='stylesheet' type='text/css'>";
-	
-
-	
-}
-
-add_action('wp_head', 'make_fonts');
 	
 //Let's add some nice smooth opengraph functionality here to make sharing content on Facebook easier. 
 
 include('library/extensions/opengraph-extensions.php');
 
-function nmwp_widgets_init() {
+function mv_widgets_init() {
 
 	if ( function_exists('register_sidebar') )
 	register_sidebar( array(
-		'name' => __( 'Ad Head Right', 'thematic' ),
-		'id' => 'ad-head-right',
-		'description' => __( 'The upper right widget area. Do not use the title. 180x150px', 'thematic' ),
+		'name' => __( 'Front Lower Right', 'thematic' ),
+		'id' => 'front-low-right',
+		'description' => __( 'The lower right hand widget for the front page. Do not use title. 120x300', 'thematic' ),
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
@@ -81,11 +64,11 @@ function nmwp_widgets_init() {
 
 }
 
-add_action( 'widgets_init', 'nmwp_widgets_init' );
+add_action( 'widgets_init', 'mv_widgets_init' );
 
 //enable the slideshow slider cycler for featured area. 
 
-function nmwp_cycler_script() {
+function mv_cycler_script() {
 
 
 	echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>';
@@ -107,7 +90,7 @@ function nmwp_cycler_script() {
 <?php
 }
 
-add_action('wp_head', 'nmwp_cycler_script');
+add_action('wp_head', 'mv_cycler_script');
 
 //Add bclass so I can change the width of the site at will. 
 
@@ -118,20 +101,17 @@ function childtheme_override_brandingopen() {
 }
 add_action('thematic_header','thematic_brandingopen',1);
 
-//custom header code
-//include('library/control/controlheader.php');
-
 //You know what's dumb? Using PHPThumb when WordPress has a really good function that does the same thing built in. 
 	
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 200, 260 ); // default Post Thumbnail dimensions   
+    set_post_thumbnail_size( 200, 200 ); // default Post Thumbnail dimensions   
 }
 
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'head-thumb', 180, 150, true ); //(hard cropped)
-	add_image_size( 'slide-thumb', 196, 196, true ); //(hard cropped)
-	add_image_size( 'bnav-thumb', 75, 60, true ); //(hard cropped)
+	add_image_size( 'head-thumb', 80, 50, true ); //(hard cropped)
+	add_image_size( 'main-thumb', 412, 226, true ); //(hard cropped)
+	add_image_size( 'rnav-thumb', 76, 102, true ); //(hard cropped)
 }
 
 //Let's get fun places in there. We'll figure out how to fill them in a bit. 
@@ -166,34 +146,7 @@ if ( function_exists( 'add_image_size' ) ) {
 }add_action('thematic_header','thematic_blogtitle',3);**/
 
 
-//A tagline for profit and fun.
-
-function childtheme_override_blogdescription() { 
-
-			$blogdesc = '>' . get_bloginfo('description');
-
-	        	echo "\t\t<div id=\"tagline\" $blogdesc</div>\n\n";
-
-				echo "</div> <div class=\"clearfloat\"></div> <!--end sitetitle div-->";
-
-
-}add_action('thematic_header','thematic_blogdescription',5);
-
-
-
-
-//HTML5 markup FTW. Also, the slider. 
-
 //include('library/control/navslider.php');
-
-/**Better safe than sorry, let's kill overflow posibilities */		
-function make_belowheader()
-{ ?>
-
-		<div class="clearfloat"></div>
-		
-<?php }
-add_action('thematic_belowheader','make_belowheader');
 
 
 /** Seriously... I hate having to rewrite numbers in CSS over and over again for body width. Let's just freaking give the width a class and add it to whatever the hell needs it, starting with the main div. **/
@@ -252,7 +205,7 @@ function make_killer_excerpt( $text ) {
 		$text = str_replace('\]\]\>', ']]&gt;', $text);
 		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 		$text = strip_tags($text, '<p> <strong> <bold> <i> <em> <emphasis> <del> <h1> <h2> <h3> <h4> <h5>');
-		$excerpt_length = 200; //200 words for some reason... would prefer a char count. Not sure how to do it. 
+		$excerpt_length = 40; //words for some reason... would prefer a char count. Not sure how to do it. 
 		$words = explode(' ', $text, $excerpt_length + 1);
 		if (count($words)> $excerpt_length) {
 		  array_pop($words);
@@ -287,8 +240,5 @@ function noaside_pre_get_posts( &$wp_query )
         $wp_query->set( 'tax_query', $tax_query );
     }
 }
-
-
-//include('library/extensions/sidebartop-extensions.php');
 
 ?>
