@@ -119,6 +119,10 @@ function mv_cycler_script() {
 }
 
 add_action('wp_head', 'mv_cycler_script');
+
+//custom header code
+include('library/control/controlheader.php');
+
 //creating a very different home page.
 	
 	function childtheme_override_brandingopen() {

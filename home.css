@@ -151,12 +151,25 @@ body {
 
 #sidebar-left-box {
 
-	width: 166px;
+	width: 196px;
 	margin-right: 6px;
-	padding: 8px 15px;
-	background-color: #E5E5E5;
 	margin-left:-886px;
-	height:920px;
+	height:936px;
 
 }
 
+#logobox {
+
+	margin-left: -21px;
+	margin-top: -12px;
+
+}
+
+#sidebar-left {
+
+	margin-top: 8px;
+	padding: 6px 15px 10px;
+	min-height: 692px;
+	border-left: 6px inset #6CB088;
+
+}

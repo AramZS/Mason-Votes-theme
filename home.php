@@ -1,7 +1,55 @@
 <?php
 
-    // calling the header.php
-    get_header();
+
+    // Creating the doctype
+    thematic_create_doctype();
+    echo " ";
+    language_attributes();
+    echo ">\n";
+    
+    // Creating the head profile
+    thematic_head_profile();
+
+    // Creating the doc title
+    thematic_doctitle();
+    
+    // Creating the content type
+    thematic_create_contenttype();
+    
+    // Creating the description
+    thematic_show_description();
+    
+    // Creating the robots tags
+    thematic_show_robots();
+    
+    // Creating the canonical URL
+    thematic_canonical_url();
+    
+    // Loading the stylesheet
+    thematic_create_stylesheet();
+
+	if (THEMATIC_COMPATIBLE_FEEDLINKS) {    
+    	// Creating the internal RSS links
+    	thematic_show_rss();
+    
+    	// Creating the comments RSS links
+    	thematic_show_commentsrss();
+   	}
+    
+    // Creating the pingback adress
+    thematic_show_pingback();
+    
+    // Enables comment threading
+    thematic_show_commentreply();
+
+    // Calling WordPress' header action hook
+    wp_head();
+    
+?>
+
+</head>
+
+<?php 
 
 ?>
 
@@ -35,7 +83,9 @@
         </div>        
     </div>
     <div id="sidebar-left-box" class="left">
-    	<div id="logobox">aaaaaaaaa</div>
+    	<div id="logobox">
+			<a href="<?php echo site_url(); ?>"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>px" height="<?php echo HEADER_IMAGE_HEIGHT; ?>px" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" /></a>
+		</div>
         <div id="sidebar-left"></div>
     </div>	
    </div>
