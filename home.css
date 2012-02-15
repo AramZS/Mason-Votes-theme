@@ -1,2 +1,162 @@
-/*Apply a basic layout*/
-@import url('../thematic/library/layouts/3c-fixed.css');
+/*Apply a basic layout
+@import url('../thematic/library/layouts/3c-fixed.css');*/
+
+/*Reset browser defaults */
+@import url('../thematic/library/styles/reset.css');
+
+body {
+
+	background-color: white;
+
+}
+
+.left {
+
+	float:left;
+
+}
+
+.right { 
+
+	float:right;
+	
+}
+
+#main {
+
+	padding: 0;
+
+}
+
+#maincontainer {
+	width: 926px;
+	margin: 0 auto;
+
+}
+
+#innercontainer {
+
+	float:left;
+	width:100%;
+	text-align: left;
+	padding: 10px 20px; /**Leaving 886px to play with in the center**/
+
+}
+
+#front-main {
+
+	float: left;
+	margin-left: 202px;
+	
+}
+
+/**main content styling**/
+#above {
+
+	width: 100%;
+	height: 110px;
+	margin-bottom: 12px;
+	background-color: pink;
+
+}
+
+#preview {
+
+	height: 227px;
+	margin-bottom: 9px;
+	width: 100%;
+
+}
+
+#preview-side {
+
+	width: 264px;
+	float: right;
+	height: 228px;
+	background-color: blue;
+	
+}
+
+
+#preview-photos {
+
+	width: 100%;
+	background-color: lightgreen;
+	height: 120px;
+	margin-bottom: 6px;
+
+}
+
+.mini-photos {
+
+	width: 76px;
+	height: 102px;
+	margin: 6px;
+	background-color: yellow;
+	float: left;
+
+}
+
+#mainphoto {
+
+	width: 414px;
+	margin-right: 5px;
+	float: left;
+	height: 228px;
+	background-color: lightblue;
+
+}
+
+#main-content {
+
+	width:683px;
+	float:left;
+	
+	background-color: green;
+	height: 578px;
+
+}
+
+#sidebar-right {
+
+	width: 120px;
+	float: left;
+	margin-left: -120px;
+	background-color: red;
+	height: 578px;
+
+}
+
+#big-story {
+
+	width:541px;
+	margin-right: 22px;
+	background-color: lightblue;
+	float:left;
+	
+	height: 124px;
+
+}
+
+#feed {
+
+	width:541px;
+	margin-right: 22px;
+	background-color: lightyellow;
+	margin-bottom: 10px;
+	float:left;
+	height: 454px;
+
+}
+
+#sidebar-left-box {
+
+	width: 166px;
+	margin-right: 6px;
+	padding: 8px 15px;
+	background-color: #E5E5E5;
+	margin-left:-886px;
+	height:920px;
+
+}
+
