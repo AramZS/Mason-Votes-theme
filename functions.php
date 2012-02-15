@@ -56,10 +56,10 @@ function mv_widgets_init() {
 		'name' => __( 'Front Upper Left', 'thematic' ),
 		'id' => 'front-up-left',
 		'description' => __( 'The front upper left sidebar', 'thematic' ),
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4>',
+		'after_title' => '</h4>',
 	) );	
 	
 	if ( function_exists('register_sidebar') )
@@ -67,10 +67,10 @@ function mv_widgets_init() {
 		'name' => __( 'Front Lower Left', 'thematic' ),
 		'id' => 'front-low-left',
 		'description' => __( 'The lower left widget for the front page.', 'thematic' ),
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h5>',
+		'after_title' => '</h5>',
 	) );	
 	
 	if ( function_exists('register_sidebar') )
@@ -78,8 +78,8 @@ function mv_widgets_init() {
 		'name' => __( 'Front Top Right', 'thematic' ),
 		'id' => 'front-low-left',
 		'description' => __( 'The widget in the middle of the right side of the front page. Do not use title. 260x100', 'thematic' ),
-		'before_widget' => '',
-		'after_widget' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '',
 		'after_title' => '',
 	) );		
@@ -89,8 +89,8 @@ function mv_widgets_init() {
 		'name' => __( 'Front Lower Right', 'thematic' ),
 		'id' => 'front-low-right',
 		'description' => __( 'The lower right hand widget for the front page. Do not use title. 120x300', 'thematic' ),
-		'before_widget' => '',
-		'after_widget' => '',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
 		'before_title' => '',
 		'after_title' => '',
 	) );		
