@@ -58,27 +58,14 @@
     <div id="front-main">
     	<div id="above">
         </div>
-        <div id="preview">
-            <div id="mainphoto">
-            </div>
-            <div id="preview-side">
-                <div id="preview-photos">
-                    <div class="mini-photos"></div>
-                    <div class="mini-photos"></div>
-                    <div class="mini-photos"></div>                             
-                </div>
-            
-                <div id="nextevent">
-                </div>
-            </div>
 
-        </div>
-        <div id="main-content">
-        	<div id="big-story">
-            </div>
+			<?php include('library/extensions/navslider.php'); ?>
+ 
+
+        
             <div id="feed">
             </div>
-        </div>
+        </div><!-- Ending main content div from navslider -->
         <div id="sidebar-right">
         </div>        
     </div>
@@ -95,9 +82,6 @@
 
     // action hook for placing content below #container
     thematic_belowcontainer();
-
-    // calling the standard sidebar 
-    thematic_sidebar();
     
     // calling footer.php
     get_footer();

@@ -17,9 +17,9 @@ function childtheme_options() {
 	
 	$childoptions = array(
 	//Change link color.
-	array(	"name" => __('Featured Head Story','thematic'),
-			"desc" => __('Find the post ID by mousing over the post in the All Posts section.', 'thematic'),
-			"id" => "head_post",
+	array(	"name" => __('Featured Head Category','thematic'),
+			"desc" => __('Find the Category ID by mousing over the categories you want featured. Seperate with commas, no spaces. Find after tag_id in the URL.', 'thematic'),
+			"id" => "head_cats",
 			"std" => "12",
 			"type" => "text"
 		),
