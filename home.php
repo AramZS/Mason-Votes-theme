@@ -73,7 +73,21 @@
     	<div id="logobox">
 			<a href="<?php echo site_url(); ?>"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>px" height="<?php echo HEADER_IMAGE_HEIGHT; ?>px" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" /></a>
 		</div>
-        <div id="sidebar-left"></div>
+        <div id="sidebar-left">
+			<div id="left-top-widgets">
+				<?php if ( !function_exists ( 'dynamic_sidebar' ) || !dynamic_sidebar('Front Upper Left') ) : ?>
+					<div id="ltw-default" class="widget">
+						<h5>Latest News</h5>
+						<div align="left"><script src="http://www.marshinsoftware.com/rss2js/rss2js.php?feed=http%3A%2F%2Frss.news.yahoo.com%2Frss%2Felections&title=0&description=0&random=0&numitems=5&itemdescription=0&html=0&date=0&target=_blank" type="text/javascript"></script></div>
+					</div>
+				<?php endif; ?>	
+			</div>
+			<div id="left-lower-widgets">
+				<div id="llw-default" class="widget">
+				
+				</div>
+			</div>
+		</div>
     </div>	
    </div>
 </div><!-- #container -->

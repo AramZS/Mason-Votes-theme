@@ -168,8 +168,15 @@ body {
 #sidebar-left {
 
 	margin-top: 8px;
-	padding: 6px 15px 10px;
+	padding: 6px 0px 10px;
 	min-height: 692px;
-	border-left: 6px solid #6CB088;
+
+
+}
+
+#left-top-widgets {
+
+	border-left: 6px solid #C7EBD6;
+	padding: 0 8px;
 
 }
