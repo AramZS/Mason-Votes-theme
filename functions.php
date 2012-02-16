@@ -58,11 +58,12 @@ function mv_widgets_init() {
 		'after_title' => '</h5>',
 	) );	
 	
+	
 	if ( function_exists('register_sidebar') )
 	register_sidebar( array(
 		'name' => __( 'Front Lower Left', 'thematic' ),
-		'id' => 'front-low-left',
-		'description' => __( 'The lower left widget for the front page.', 'thematic' ),
+		'id' => 'front-lower-left',
+		'description' => __( 'The lower left widget for the front page. ', 'thematic' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4>',
@@ -72,7 +73,7 @@ function mv_widgets_init() {
 	if ( function_exists('register_sidebar') )
 	register_sidebar( array(
 		'name' => __( 'Front Top Right', 'thematic' ),
-		'id' => 'front-low-left',
+		'id' => 'front-top-right',
 		'description' => __( 'The widget in the middle of the right side of the front page. Do not use title. 260x100', 'thematic' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
