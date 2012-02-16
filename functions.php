@@ -14,10 +14,6 @@ function differ_css() {
 	
 		echo '<link href="' . get_stylesheet_directory_uri() . '/home.css" rel="stylesheet" type="text/css">';
 	
-	}else{
-	
-		echo '<link href="' . get_stylesheet_directory_uri() . '/else.css" rel="stylesheet" type="text/css">';
-	
 	}
 }
 
@@ -124,14 +120,97 @@ function mv_cycler_script() {
 
 add_action('wp_head', 'mv_cycler_script');
 
-//Add bclass so I can change the width of the site at will. 
+//custom header code
+include('library/control/controlheader.php');
 
-function childtheme_override_brandingopen() {
+//creating a very different home page.
 	
-	echo "<div id=\"branding\" class=\"bclass\">\n";
+	function childtheme_override_brandingopen() {
 	
-}
-add_action('thematic_header','thematic_brandingopen',1);
+		if ( is_home() ){
+		
+		}
+		else{
+		//Add bclass so I can change the width of the site at will. 
+
+		echo "<div id=\"branding\" class=\"bclass\">\n";
+		}
+	
+	}
+	
+	add_action('thematic_header','childtheme_override_brandingopen',1);
+	
+	function childtheme_override_blogtitle() {
+	
+		if ( is_home() ) {
+		
+		} else {
+		?>
+	    	<div id="blog-title"><span><a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name') ?></a></span></div>
+		<?php
+		}
+	
+	}
+	
+	add_action('thematic_header','childtheme_override_blogtitle',3);
+	
+	function childtheme_override_blogdescription(){
+	
+		if ( is_home() ) {
+		
+		} else {
+			$blogdesc = '"blog-description">' . get_bloginfo('description');
+	        	echo "\t\t<div id=$blogdesc</div>\n\n";
+		}
+	
+	}
+	
+	add_action('thematic_header','childtheme_override_blogdescription',5);
+
+	function childtheme_override_brandingclose(){
+	
+		if ( is_home() ){
+		
+		} else {
+		
+			echo "\t\t</div><!--  #branding -->\n";
+		
+		}
+	
+	}
+	
+	add_action('thematic_header','childtheme_override_brandingclose',7);
+	
+	function childtheme_override_access(){
+	
+		if ( is_home() ){
+		
+		} else {
+
+			?>
+			
+			<div id="access">
+					
+				<div class="skip-link"><a href="#content" title="<?php _e('Skip navigation to the content', 'thematic'); ?>"><?php _e('Skip to content', 'thematic'); ?></a></div><!-- .skip-link -->
+					
+				<?php 
+					
+				if ((function_exists("has_nav_menu")) && (has_nav_menu(apply_filters('thematic_primary_menu_id', 'primary-menu')))) {
+					echo  wp_nav_menu(thematic_nav_menu_args());
+				} else {
+					echo  thematic_add_menuclass(wp_page_menu(thematic_page_menu_args()));	
+				}
+				
+			?>
+	        
+			</div><!-- #access -->
+		
+			<?php
+		}
+		
+	}
+	
+	add_action('thematic_header','childtheme_override_access',9);
 
 //You know what's dumb? Using PHPThumb when WordPress has a really good function that does the same thing built in. 
 	

@@ -95,6 +95,7 @@ function childtheme_options() {
 			"std" => "",
 			"type" => "text"
 		),
+	
 
 	array ( "name" => __('Enter default site thumbnail','thematic'),
 			"desc" => __('Enter a URL for a default thumbnail for the website. This will be used by Facebook and other Open Graph applications.','thematic'),
