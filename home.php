@@ -64,6 +64,7 @@
 
         
             <div id="feed">
+				<?php include('library/extensions/tabbedcontent.php'); ?>
             </div>
         </div><!-- Ending main content div from navslider -->
         <div id="sidebar-right">

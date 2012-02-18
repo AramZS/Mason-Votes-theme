@@ -26,8 +26,8 @@ function childtheme_options() {
 		
  
 	array( 	"name" => __('Featured Category','thematic'),
-			"desc" => __('A category of posts to be featured on the front page.','thematic'),
-			"id" => "feature_cat",
+			"desc" => __('3 categories of posts to be featured in the tabs on the front page. Seperate with commas, no spaces. Find after tag_id in the URL.','thematic'),
+			"id" => "tab_cats",
 			"std" => $default_cat,
 			"type" => "select",
 			"options" => $categories

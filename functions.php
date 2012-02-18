@@ -45,6 +45,55 @@ add_action('wp_head', 'make_favicon');
 
 include('library/extensions/opengraph-extensions.php');
 
+//adding tabs functionality for the front page.
+
+function load_prototype_script() {
+
+	if (is_home()){
+		wp_enqueue_script('prototype');
+	}
+
+}
+
+add_action('wp_footer', 'load_prototype_script');
+
+function add_tabs() {
+	if (is_home()){
+		?>
+		<script>
+			//function to view tab. From Smashing WordPress book pg260.
+			function viewTab(tabId) {
+			
+				//get all child elements of "contents-container"
+				var elements = $('contents-container').childElements();
+				//Loop through them all
+				for (var i=0, end=elements.length; i<end; i++) {
+					//is clicked tab
+					if (tabId == elements[i].id) {
+						//-show element
+						elements[i].show();
+						// - Make sure css is correct for tab
+						$('tab-'+ elements[i].id).addClassName('active-tab');
+					}
+					//is not the clicked tab
+					else {
+						// -Hide
+						elements[i].hide();
+						// - Make sure css is correct for tab
+						$('tab-'+ elements[i].id).removeClassName('active-tab');
+					}
+				}
+			
+			}
+		</script>
+		
+		<?php
+
+	}
+}
+
+add_action('wp_head', 'add_tabs');
+
 function mv_widgets_init() {
 
 	if ( function_exists('register_sidebar') )
