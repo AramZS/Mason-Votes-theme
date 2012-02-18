@@ -173,6 +173,16 @@ add_action('wp_head', 'mv_cycler_script');
 //custom header code
 include('library/control/controlheader.php');
 
+function custom_excerpt_length( $length ) {
+	return 36;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+function new_excerpt_more($more) {
+	return '';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 //creating a very different home page.
 	
 	function childtheme_override_brandingopen() {
@@ -353,32 +363,6 @@ function my_new_contactmethods( $contactmethods ) {
     return $contactmethods;
 }
 add_filter('user_contactmethods','my_new_contactmethods',10,1);
-
-//Let's change some excerpt char numbers and keep styling in!
-//This does not apply if the poster uses the more tag. How to make that work?
-//Answer: No idea. Droping the text I want after the excerpt tag in the loop instead. Putting just a '...' in here instead. 
-
-function make_killer_excerpt( $text ) {
-	global $post;
-	if ( '' == $text ) {
-		$text = get_the_content('');
-		$text = apply_filters('the_content', $text);
-		$text = str_replace('\]\]\>', ']]&gt;', $text);
-		$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-		$text = strip_tags($text, '<p> <strong> <bold> <i> <em> <emphasis> <del> <h1> <h2> <h3> <h4> <h5>');
-		$excerpt_length = 40; //words for some reason... would prefer a char count. Not sure how to do it. 
-		$words = explode(' ', $text, $excerpt_length + 1);
-		if (count($words)> $excerpt_length) {
-		  array_pop($words);
-		  array_push($words, '...');
-		  $text = implode(' ', $words);
-		}
-	}
-return $text;
-}
-
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'make_killer_excerpt');
 
 //Action to filter asides out of RSS feed.
 //Via http://wordpress.stackexchange.com/questions/18412/how-to-exclude-posts-of-a-certain-format-from-the-feed

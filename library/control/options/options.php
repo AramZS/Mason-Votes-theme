@@ -29,8 +29,7 @@ function childtheme_options() {
 			"desc" => __('3 categories of posts to be featured in the tabs on the front page. Seperate with commas, no spaces. Find after tag_id in the URL.','thematic'),
 			"id" => "tab_cats",
 			"std" => $default_cat,
-			"type" => "select",
-			"options" => $categories
+			"type" => "text"
 		),
 		
 	array( 	"name" => __('Slider Category','thematic'),
