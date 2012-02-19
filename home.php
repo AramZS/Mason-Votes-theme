@@ -57,6 +57,7 @@
    <div id="innercontainer">
     <div id="front-main">
     	<div id="above">
+			<?php include('library/extensions/homeheader.php'); ?>
         </div>
 
 			<?php include('library/extensions/navslider.php'); ?>

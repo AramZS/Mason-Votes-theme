@@ -39,6 +39,27 @@ function childtheme_options() {
 			"type" => "text"
 		),
 		
+	array( 	"name" => __('Header Categories','thematic'),
+			"desc" => __('Type in the Category ID numbers of the categories you want featured in the header. Seperate with commas, no spaces. Find after tag_id in the URL.','thematic'),
+			"id" => "header_cats",
+			"std" => "",
+			"type" => "text"
+		),
+		
+	array( 	"name" => __('Header Category Images','thematic'),
+			"desc" => __('Type in the URLs of images for the categories you want featured in the header. Seperate with commas, no spaces.','thematic'),
+			"id" => "header_cat_imgs",
+			"std" => "",
+			"type" => "text"
+		),
+		
+	array( 	"name" => __('Header Category Subtitle','thematic'),
+			"desc" => __('Type in the subheadings for the categories featured in the header. Seperate with commas, no spaces.','thematic'),
+			"id" => "header_cat_subtitles",
+			"std" => "",
+			"type" => "text"
+		),
+		
 	array( 	"name" => __('Show RSS Social Icon','thematic'),
 			"desc" => __('Check to display.','thematic'),
 			"id" => "social_rss",
