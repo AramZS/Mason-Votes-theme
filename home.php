@@ -87,7 +87,7 @@
 			<div id="inner-sidebar-right">
 			<?php if ( !function_exists ( 'dynamic_sidebar' ) || !dynamic_sidebar('Front Lower Right') ) : ?>
 				<div id="flr-default" class="widget">
-					
+					<img src="<?php bloginfo('stylesheet_directory'); ?>/library/imgs/ads/demProj2.jpg" />
 				</div>
 			<?php endif; ?>	
 			</div>

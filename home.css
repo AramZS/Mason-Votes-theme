@@ -287,7 +287,8 @@ body {
 
 	margin-top: 8px;
 	padding: 6px 0px 10px;
-	min-height: 692px;
+	max-height: 692px;
+	overflow: hidden;
 
 
 }
