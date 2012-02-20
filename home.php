@@ -69,6 +69,21 @@
             </div>
         </div><!-- Ending main content div from navslider -->
         <div id="sidebar-right">
+			<div id="frontsocial" class="subBox">
+			  <center><a href="http://feeds.feedburner.com/gmuVotes"><img src="<?php bloginfo('stylesheet_directory'); ?>/library/imgs/feedicon/orangeS.png" border="0"></a></center>
+			  <div class="underBox">
+				Subscribe to Mason Votes<br>
+			  </div>
+			  <div class="underBox2">
+			  <a href="http://feeds.feedburner.com/masonvotesmain" target="_blank" class="feed">Full Feed</a><br>
+			  <a href="http://feeds.feedburner.com/MasonVotesPodcasts" target="_blank" class="feed">Podcasts</a><br>
+			  <a href="http://www.facebook.com/pages/Mason-Votes/36144110026" target="_blank" class="facebook">Facebook</a><br>
+			  <a href="http://twitter.com/masonvotes" target="_blank" class="tweet">Twitter</a><br>
+			  <a href="http://www.flickr.com/photos/masonvotes/" target="_blank" class="flickr">Flickr</a><br>
+			  <a href="http://www.youtube.com/masonvotes" target="_blank" class="youtube">YouTube</a><br>
+			  <a href="http://delicious.com/masonvotes" target="_blank" class="deli">Delicious</a><br>
+			  </div>      
+			</div>
         </div>        
     </div>
     <div id="sidebar-left-box" class="left">

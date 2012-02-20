@@ -128,7 +128,7 @@
 					Written by <a href="<?php echo get_site_url(); ?>/author/<?php the_author_meta('user_nicename'); ?>/" rel="author" alt="<?php the_author(); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> on <time><?php the_time( 'F j, Y' ); ?> at <?php the_time('g:i a'); ?></time>
 				</address><!--/post-meta-->
 				<div class="entry">
-					<?php the_excerpt(); ?><p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More from <?php the_title(); ?></a></p><!-- Excerpt -->
+					<?php the_excerpt(); ?><p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More.</a></p><!-- Excerpt -->
 					<div class="clear"></div>
 				</div><!--END entry -->				
 			
@@ -136,6 +136,7 @@
 	<?php
 	
 		endwhile;
+		remove_filter('excerpt_length', 'custom_excerpt_length', 999);
 		wp_reset_postdata();
 		wp_reset_query();
 		}

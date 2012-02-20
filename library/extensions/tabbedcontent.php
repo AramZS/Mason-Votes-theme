@@ -11,6 +11,11 @@
   
 $exploded_tab_cats = explode(",", $tab_cats);
 $c = 0;
+
+function new_custom_excerpt_length( $length ) {
+	return 30;
+}
+add_filter( 'excerpt_length', 'new_custom_excerpt_length', 999 );
   
 ?>
 
@@ -32,7 +37,7 @@ $c = 0;
 		$c++;
 		
 	?>
-		<div id="content-<?php echo get_cat_name($value); ?>" <?php if ($c>1){ echo "style='display: none;'";} ?>>
+		<div id="content-<?php echo get_cat_name($value); ?>" class="content-contained" <?php if ($c>1){ echo "style='display: none;'";} ?>>
 		
 		<?php 
 			$args = array(
