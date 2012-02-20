@@ -103,6 +103,7 @@ body {
 	float: left;
 	height: 228px;
 	position: relative;
+	z-index: -100;
 
 }
 
@@ -303,16 +304,23 @@ body {
 	width: 124px;
 	float: left;
 	margin-left: -124px;
-	background-color: red;
 	height: 578px;
 
+}
+
+#inner-sidebar-right {
+
+	margin-top:8px;
+	max-height:342px;
+	overflow:hidden;
+	
 }
 
 #frontsocial {
 
 	border-width: 2px;
 	border-style: inset;
-	background-color:#e5e5e5;
+	background-color:#C7EBD6;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:14px;
 	color: #666;

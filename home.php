@@ -84,6 +84,13 @@
 			  <a href="http://delicious.com/masonvotes" target="_blank" class="deli">Delicious</a><br>
 			  </div>      
 			</div>
+			<div id="inner-sidebar-right">
+			<?php if ( !function_exists ( 'dynamic_sidebar' ) || !dynamic_sidebar('Front Lower Right') ) : ?>
+				<div id="flr-default" class="widget">
+					
+				</div>
+			<?php endif; ?>	
+			</div>
         </div>        
     </div>
     <div id="sidebar-left-box" class="left">
