@@ -38,17 +38,16 @@
 		$sliderquery = new WP_Query( array( 'cat' => $value, 'showposts' => 1) );
 		remove_filter( 'posts_where', 'filter_where' );
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();
+		
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'main-thumb' );
+		$thumburl = $thumb['0']; 
 	
 ?>
 			
-           <div id="mainphoto">
-				<?php if ( has_post_thumbnail() ) { ?>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" >
-							<?php the_post_thumbnail( 'main-thumb' ); ?></a>
-						<?php } else { ?>
-							<a href="<?php the_permalink(); ?>"><img class="attachment-slide-thumb" src="<?php bloginfo('template_directory'); ?>/library/imgs/sliderdummy.png" alt="" /></a>
-						<?php }	?>
-			</div>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" ><div id="mainphoto" style="background:url('<?php echo $thumburl ?>') top left no-repeat;">
+
+				<div><h2><?php the_title(); ?></h2></div>
+			</div></a>
 			<?php 
 				
 				$firstslide .= get_the_ID() . ",";
@@ -127,7 +126,6 @@
 			
 				<address class="post-meta">
 					Written by <a href="<?php echo get_site_url(); ?>/author/<?php the_author_meta('user_nicename'); ?>/" rel="author" alt="<?php the_author(); ?>" title="<?php the_author(); ?>"><?php the_author(); ?></a> on <time><?php the_time( 'F j, Y' ); ?> at <?php the_time('g:i a'); ?></time>
-					<a href="<?php echo get_site_url(); ?>/author/<?php the_author_meta('user_nicename'); ?>/" rel="author" alt="<?php the_author(); ?>" title="<?php the_author(); ?>"><?php echo get_avatar( get_the_author_meta('ID'), 32 ); ?></a>
 				</address><!--/post-meta-->
 				<div class="entry">
 					<?php the_excerpt(); ?><p class="readmoregraf"><a href="<?php the_permalink(); ?>">Read More from <?php the_title(); ?></a></p><!-- Excerpt -->

@@ -104,6 +104,28 @@ body {
 	float: left;
 	height: 228px;
 	background-color: lightblue;
+	position: relative;
+
+}
+
+#mainphoto div {
+
+	position: absolute;
+	top: 126px;
+	left: 0;
+	width: auto;
+	max-height:90px;
+	padding: 10px;
+	background: rgb(0, 0, 0); /*fallback color*/
+	background: rgba(0, 0, 0, 0.7);	
+
+}
+
+#mainphoto div h2 {
+
+	color: white;
+	font: bold 24px/45px Helvetica, Sans-Serif;
+	letter-spacing: -1px;
 
 }
 
@@ -111,7 +133,6 @@ body {
 
 	width:683px;
 	float:left;
-	
 	background-color: green;
 	height: 578px;
 
@@ -135,6 +156,23 @@ body {
 	float:left;
 	
 	height: 124px;
+
+}
+
+#big-story .post-meta {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	color: #BBB;
+	margin-bottom: 4px;
+
+}
+
+#big-story .post-meta a {
+
+	text-decoration:none;
+	color: #BBB;
 
 }
 

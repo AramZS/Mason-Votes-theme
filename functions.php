@@ -174,7 +174,7 @@ add_action('wp_head', 'mv_cycler_script');
 include('library/control/controlheader.php');
 
 function custom_excerpt_length( $length ) {
-	return 36;
+	return 46;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
