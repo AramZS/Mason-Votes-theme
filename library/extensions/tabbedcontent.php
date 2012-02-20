@@ -54,11 +54,11 @@ add_filter( 'excerpt_length', 'new_custom_excerpt_length', 999 );
 			?>
 			
 				<div class="home-tab-item">
-					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
-						<div class="tab-item-title">
+					<div class="tab-item-title">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
 							<?php echo the_title(); ?>
-						</div>
-					</a>
+						</a>
+					</div>
 					<div class="home-tab-content">
 						<?php the_excerpt(); ?>
 						

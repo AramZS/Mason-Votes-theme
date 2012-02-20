@@ -101,6 +101,8 @@
 			<div id="left-top-widgets">
 				<?php if ( !function_exists ( 'dynamic_sidebar' ) || !dynamic_sidebar('Front Upper Left') ) : ?>
 					<div id="ltw-default" class="widget">
+						<script type="text/javascript" src="http://www.lijit.com/informers/wijits?username=masonvotes&amp;js=1"></script>
+						<br  />
 						<h5>Latest News</h5>
 						<div align="left">http://news.google.com/news?pz=1&cf=all&ned=us&hl=en&topic=el&output=rss</div>
 					</div>
