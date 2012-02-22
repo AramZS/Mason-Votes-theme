@@ -44,11 +44,11 @@
 	
 ?>
 			
-          <div id="mainphoto" style="background:url('<?php echo $thumburl ?>') top left no-repeat;">
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" >
+          <div id="mainphoto" style="background:url('<?php echo $thumburl ?>') top left no-repeat;" OnClick="javascript: window.open('<?php the_permalink(); ?>')">
+			
 				
-					<div><h2><?php the_title(); ?></h2></div>
-			</a>	
+					<div><h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" ><?php the_title(); ?></a></h2></div>
+				
 		  </div>
 			<?php 
 				
