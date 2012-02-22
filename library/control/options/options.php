@@ -1,8 +1,8 @@
 <?php
 
 	// Set some theme specific variables for the options panel
-	$childthemename = "Prefixed";
-	$childshortname = "pf";
+	$childthemename = "Mason Votes";
+	$childshortname = "mv";
 	$childoptions = array();
 
 function childtheme_options() {
@@ -25,7 +25,7 @@ function childtheme_options() {
 		),
 		
  
-	array( 	"name" => __('Featured Category','thematic'),
+	array( 	"name" => __('Tabed Categories','thematic'),
 			"desc" => __('3 categories of posts to be featured in the tabs on the front page. Seperate with commas, no spaces. Find after tag_id in the URL.','thematic'),
 			"id" => "tab_cats",
 			"std" => $default_cat,
@@ -33,7 +33,7 @@ function childtheme_options() {
 		),
 		
 	array( 	"name" => __('Slider Category','thematic'),
-			"desc" => __('Type in the Category ID numbers of the categories you want featured. Seperate with commas, no spaces. Find after tag_id in the URL.','thematic'),
+			"desc" => __('Type in the Category ID numbers of the categories you want featured in the central space on the home page. Seperate with commas, no spaces. Find after tag_id in the URL.','thematic'),
 			"id" => "slider_cat",
 			"std" => "1",
 			"type" => "text"

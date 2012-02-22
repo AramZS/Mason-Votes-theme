@@ -30,12 +30,12 @@
 			$where .= " AND post_date < '" . date('Y-m-d', strtotime('-2 days')) . "'";
 			return $where;
 			}
-	//Loop categories in use. 
-	foreach ($exploded_slider_cats as $value) {
+	
+	
 		
 		//Note the meta key here. This should only select stories with featured images, eliminating the need for if checks. 
 		add_filter( 'posts_where', 'filter_where' );
-		$sliderquery = new WP_Query( array( 'cat' => $value, 'showposts' => 1) );
+		$sliderquery = new WP_Query( array( 'cat' => $slider_cat, 'showposts' => 1) );
 		remove_filter( 'posts_where', 'filter_where' );
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();
 		
@@ -44,28 +44,30 @@
 	
 ?>
 			
-          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" ><div id="mainphoto" style="background:url('<?php echo $thumburl ?>') top left no-repeat;">
-
-				<div><h2><?php the_title(); ?></h2></div>
-			</div></a>
+          <div id="mainphoto" style="background:url('<?php echo $thumburl ?>') top left no-repeat;">
+			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" >
+				
+					<div><h2><?php the_title(); ?></h2></div>
+			</a>	
+		  </div>
 			<?php 
 				
 				$firstslide .= get_the_ID() . ",";
 		endwhile;
 		wp_reset_postdata();
 		wp_reset_query();
-	}
+	
 ?>
            
             <div id="preview-side">
                 <div id="preview-photos">
 <?php		
-	//Loop categories in use. 
-		foreach ($exploded_slider_cats as $value) {
+	
+		
 		
 		//Note the meta key here. This should only select stories with featured images, eliminating the need for if checks. 
 		add_filter( 'posts_where', 'filter_where' );
-		$sliderquery = new WP_Query( array( 'cat' => $value, 'showposts' => 3, 'offset' => 1 ) );
+		$sliderquery = new WP_Query( array( 'cat' => $slider_cat, 'showposts' => 3, 'offset' => 1 ) );
 		remove_filter( 'posts_where', 'filter_where' );
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();		
 ?>
@@ -97,7 +99,7 @@
 		endwhile;
 		wp_reset_postdata();
 		wp_reset_query();
-		}
+		
 		
 ?>
 				</div>          
@@ -112,12 +114,12 @@
 </div>
 		<div id="main-content">
 	<?php	
-	//Loop categories in use. 
-	foreach ($exploded_slider_cats as $value) {
+	
+	
 		
 		//Note the meta key here. This should only select stories with featured images, eliminating the need for if checks. 
 		add_filter( 'posts_where', 'filter_where' );
-		$sliderquery = new WP_Query( array( 'cat' => $value, 'showposts' => 1) );
+		$sliderquery = new WP_Query( array( 'cat' => $slider_cat, 'showposts' => 1) );
 		remove_filter( 'posts_where', 'filter_where' );
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();
 	?>
@@ -139,7 +141,7 @@
 		remove_filter('excerpt_length', 'custom_excerpt_length', 999);
 		wp_reset_postdata();
 		wp_reset_query();
-		}
+		
 		
 	?>
 		
