@@ -246,7 +246,8 @@ add_filter('excerpt_more', 'new_excerpt_more');
 		
 		} else {
 		?>
-	    	<div id="blog-title"><span><a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name') ?></a></span></div>
+	    	<div id="main-logo"><a href="<?php echo site_url(); ?>"><img src="<?php header_image(); ?>" width="<?php echo HEADER_IMAGE_WIDTH; ?>px" height="<?php echo HEADER_IMAGE_HEIGHT; ?>px" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>" /></a></div>
+			<div id="blog-title"><span><a href="<?php bloginfo('url') ?>/" title="<?php bloginfo('name') ?>" rel="home"><?php bloginfo('name') ?></a></span></div>
 		<?php
 		}
 	
@@ -281,36 +282,7 @@ add_filter('excerpt_more', 'new_excerpt_more');
 	
 	add_action('thematic_header','childtheme_override_brandingclose',7);
 	
-	function childtheme_override_access(){
-	
-		if ( is_home() ){
-		
-		} else {
 
-			?>
-			
-			<div id="access">
-					
-				<div class="skip-link"><a href="#content" title="<?php _e('Skip navigation to the content', 'thematic'); ?>"><?php _e('Skip to content', 'thematic'); ?></a></div><!-- .skip-link -->
-					
-				<?php 
-					
-				if ((function_exists("has_nav_menu")) && (has_nav_menu(apply_filters('thematic_primary_menu_id', 'primary-menu')))) {
-					echo  wp_nav_menu(thematic_nav_menu_args());
-				} else {
-					echo  thematic_add_menuclass(wp_page_menu(thematic_page_menu_args()));	
-				}
-				
-			?>
-	        
-			</div><!-- #access -->
-		
-			<?php
-		}
-		
-	}
-	
-	add_action('thematic_header','childtheme_override_access',9);
 
 //You know what's dumb? Using PHPThumb when WordPress has a really good function that does the same thing built in. 
 	

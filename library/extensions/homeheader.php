@@ -40,11 +40,12 @@
 
   
 	?>
-	<div>
+	<div class="header-cat-item">
 		<a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>">
-			<div class="header-category-display" style="background:url('<?php echo $imgUrlsArray[$key]; ?>') top left no-repeat;">
-					<h5><?php echo get_cat_name($value); ?></h5>
-					<h6><?php echo $catSubArray[$key]; ?></h6>
+			<div class="header-category-display" >
+					<img src="<?php echo $imgUrlsArray[$key]; ?>" alt="<?php echo get_cat_name($value); ?>" />
+					<h5><a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>"><?php echo get_cat_name($value); ?></a></h5>
+					<h6><a href="<?php echo get_category_link( $headerCatArray[$key] ); ?>"><?php echo $catSubArray[$key]; ?></a></h6>
 			</div>
 		</a>
 	</div>

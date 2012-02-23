@@ -79,9 +79,8 @@ a:visited {
 #above {
 
 	width: 100%;
-	height: 110px;
-	margin-bottom: 12px;
-	background-color: pink;
+	height: 112px;
+	margin-bottom: 10px;
 
 }
 
@@ -120,6 +119,60 @@ a:visited {
 #home-button-two {
 
 	float: left;
+
+}
+
+#candidates {
+
+	padding-left:10px;
+
+}
+
+.header-cat-item {
+
+	float: left;
+	height: 78px;
+
+
+}
+
+.header-category-display {
+
+	position:relative;
+
+}
+
+.header-category-display h5 {
+
+	position:absolute;
+	left:78px;
+	top:8px;
+	color:#555;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+
+}
+
+.header-category-display h5 a{
+
+	text-decoration: none;
+
+}
+
+.header-category-display h6 {
+
+	position:absolute;
+	left:78px;
+	top:26px;
+	color:#555;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+
+}
+
+.header-category-display h6 a{
+
+	text-decoration: none;
 
 }
 

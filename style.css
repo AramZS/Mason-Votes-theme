@@ -29,3 +29,6 @@ Created for Mason Votes.
 
 /* Prepare theme for plugins */
 @import url('../thematic/library/styles/plugins.css');
+
+/*Apply default theme styles and colors */
+@import url('user.css');
