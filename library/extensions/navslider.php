@@ -44,7 +44,7 @@
 	
 ?>
 			
-          <div id="mainphoto" style="background:url('<?php echo $thumburl ?>') top left no-repeat;" OnClick="javascript: window.open('<?php the_permalink(); ?>')">
+          <div id="mainphoto" style="background:url('<?php echo $thumburl ?>') top left no-repeat;" OnClick="javascript: location.replace('<?php the_permalink(); ?>')">
 			
 				
 					<div><h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" ><?php the_title(); ?></a></h2></div>
@@ -60,27 +60,25 @@
 ?>
            
             <div id="preview-side">
-                <div id="preview-photos">
+                <div id="preview-photos" class="mini-last">
 <?php		
 	
 		
-		
+		$rc = 0;
 		//Note the meta key here. This should only select stories with featured images, eliminating the need for if checks. 
 		add_filter( 'posts_where', 'filter_where' );
 		$sliderquery = new WP_Query( array( 'cat' => $slider_cat, 'showposts' => 3, 'offset' => 1 ) );
 		remove_filter( 'posts_where', 'filter_where' );
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();		
-?>
 
-                    <div class="mini-photos">
-					<?php if ( has_post_thumbnail() ) { ?>
-								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>" >
-							<?php the_post_thumbnail( 'rnav-thumb' ); ?></a>
-						<?php } else { ?>
-							<a href="<?php the_permalink(); ?>"><img class="attachment-slide-thumb" src="<?php bloginfo('template_directory'); ?>/library/imgs/sliderdummy.png" alt="" />
-						<?php }	?>
-							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>"><div class="slider-item-title">
-							
+		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'rnav-thumb' );
+		$thumburl = $thumb['0']; 
+		$rc++;
+		?>
+
+                    <div class="mini-photos<?php if ($rc == 3) { echo " mini-last";} ?>" style="background:url('<?php echo $thumburl ?>') top left no-repeat;" OnClick="javascript: location.replace('<?php the_permalink(); ?>')">
+							<div class="slider-item-title<?php if ($rc == 3) { echo " mini-last";} ?>">
+								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" alt="<?php the_title_attribute(); ?>">
 							<?php
 							//If title is longer than 60chars, prob not going to fit. 
 							if (strlen($post->post_title) > 60) {
@@ -90,7 +88,8 @@
 								the_title();
 							}
 							?>
-						</div></a>				
+							</a>
+						</div>				
 					</div>                           
 
 <?php
