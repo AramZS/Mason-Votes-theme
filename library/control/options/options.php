@@ -46,6 +46,13 @@ function childtheme_options() {
 			"type" => "text"
 		),
 		
+	array( 	"name" => __('Show text on top of header categories.','thematic'),
+			"desc" => __('Uncheck this box if you wish the category display in the header area of the homepage to be only images, with no floating text over them.','thematic'),
+			"id" => "head_cat_text_toggle",
+			"std" => "true",
+			"type" => "checkbox"
+		),
+		
 	array( 	"name" => __('Header Category Images','thematic'),
 			"desc" => __('Type in the URLs of images for the categories you want featured in the header. Seperate with commas, no spaces.','thematic'),
 			"id" => "header_cat_imgs",
