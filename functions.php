@@ -281,7 +281,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'head-thumb', 80, 50, true ); //(hard cropped)
-	add_image_size( 'main-thumb', 412, 226, true ); //(hard cropped)
+	add_image_size( 'main-thumb', 419, 226, true ); //(hard cropped)
 	add_image_size( 'rnav-thumb', 88, 120, true ); //(hard cropped)
 }
 
