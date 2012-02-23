@@ -282,7 +282,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'head-thumb', 80, 50, true ); //(hard cropped)
 	add_image_size( 'main-thumb', 412, 226, true ); //(hard cropped)
-	add_image_size( 'rnav-thumb', 64, 90, true ); //(hard cropped)
+	add_image_size( 'rnav-thumb', 88, 120, true ); //(hard cropped)
 }
 
 //Let's get fun places in there. We'll figure out how to fill them in a bit. 
