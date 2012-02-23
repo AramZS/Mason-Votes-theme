@@ -123,7 +123,7 @@ function mv_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Front Top Right', 'thematic' ),
 		'id' => 'front-top-right',
-		'description' => __( 'The widget in the middle of the right side of the front page. Do not use title. 260x100', 'thematic' ),
+		'description' => __( 'The widget in the middle of the right side of the front page. Do not use title. 256x100', 'thematic' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '',
