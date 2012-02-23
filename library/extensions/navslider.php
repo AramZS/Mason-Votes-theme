@@ -22,21 +22,10 @@
 	
 	//Ok, now need to count the number of categories to be checked against the counter. 
 	
-	$cats_item_count = count($exploded_slider_cats);
-	
-	
-			function filter_where( $where = '' ) {
-			// posts in the last 1 to 90 days
-			$where .= " AND post_date < '" . date('Y-m-d', strtotime('-2 days')) . "'";
-			return $where;
-			}
-	
-	
+	$cats_item_count = count($exploded_slider_cats);	
 		
 		//Note the meta key here. This should only select stories with featured images, eliminating the need for if checks. 
-		add_filter( 'posts_where', 'filter_where' );
 		$sliderquery = new WP_Query( array( 'cat' => $slider_cat, 'showposts' => 1) );
-		remove_filter( 'posts_where', 'filter_where' );
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();
 		
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'main-thumb' );
@@ -66,9 +55,9 @@
 		
 		$rc = 0;
 		//Note the meta key here. This should only select stories with featured images, eliminating the need for if checks. 
-		add_filter( 'posts_where', 'filter_where' );
+		
 		$sliderquery = new WP_Query( array( 'cat' => $slider_cat, 'showposts' => 3, 'offset' => 1 ) );
-		remove_filter( 'posts_where', 'filter_where' );
+		
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();		
 
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'rnav-thumb' );
@@ -117,9 +106,9 @@
 	
 		
 		//Note the meta key here. This should only select stories with featured images, eliminating the need for if checks. 
-		add_filter( 'posts_where', 'filter_where' );
+		
 		$sliderquery = new WP_Query( array( 'cat' => $slider_cat, 'showposts' => 1) );
-		remove_filter( 'posts_where', 'filter_where' );
+		
 		while ( $sliderquery->have_posts() ) : $sliderquery->the_post();
 	?>
 		
