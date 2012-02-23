@@ -49,13 +49,11 @@ include('library/extensions/opengraph-extensions.php');
 
 function load_prototype_script() {
 
-	if (is_home()){
-		wp_enqueue_script('prototype');
-	}
+	echo '<script type="text/javascript" src="' . get_bloginfo('stylesheet_directory') . '/library/extensions/prototype.js"></script>';
 
 }
 
-add_action('wp_footer', 'load_prototype_script');
+add_action('wp_head', 'load_prototype_script');
 
 function add_tabs() {
 	if (is_home()){

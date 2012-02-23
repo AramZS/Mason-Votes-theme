@@ -25,8 +25,8 @@ add_filter( 'excerpt_length', 'new_custom_excerpt_length', 999 );
 		$c++;
 		$cat_name = get_cat_name($value);
 	?>
-		<li id="tab-content-<?php echo get_cat_name($value); ?>" <?php if ($c==1){ echo "class='active-tab'";} ?>>
-			<a href="javascript:viewTab('content-<?php echo get_cat_name($value); ?>');"><?php echo get_cat_name($value); ?></a>
+		<li id="tab-content-<?php echo $value; ?>" <?php if ($c==1){ echo "class='active-tab'";} ?>>
+			<a href="javascript:viewTab('content-<?php echo $value; ?>');"><?php echo get_cat_name($value); ?></a>
 		</li>
 	<?php } ?>
 </ul>
@@ -36,8 +36,9 @@ add_filter( 'excerpt_length', 'new_custom_excerpt_length', 999 );
 	foreach ($exploded_tab_cats as $value) {
 		$c++;
 		
+		
 	?>
-		<div id="content-<?php echo get_cat_name($value); ?>" class="content-contained" <?php if ($c>1){ echo "style='display: none;'";} ?>>
+		<div id="content-<?php echo $value; ?>" class="content-contained" <?php if ($c>1){ echo "style='display: none;'";} ?>>
 		
 		<?php 
 			$args = array(
